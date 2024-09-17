@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: msh-test
+
+bases:
+- ../../base
+
+patchesStrategicMerge:
+- patch/deployment.yaml
+
+images:
+- name: msh-application-sppl-shared-services
+  newName: 851725622524.dkr.ecr.ap-southeast-1.amazonaws.com/msh-application-sppl-shared-services
+  newTag: "v-891"
+
+commonLabels:
+  environment: dev
+  app: msh
+
+secretGenerator:
+- name: app-secret
+  literals:
+  - DATABASE_USER=dev-user
+  - DATABASE_PASSWORD=devpassword

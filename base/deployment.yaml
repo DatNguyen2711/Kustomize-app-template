@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: msh-kustomize
+  labels:
+    app: msh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msh
+  template:
+    metadata:
+      labels:
+        app: msh
+    spec:
+      containers:
+      - name: msh-kustomize
+        image: msh-application-sppl-shared-services  
+        ports:
+        - containerPort: 8080  
