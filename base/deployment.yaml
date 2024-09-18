@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: msh-kustomize
-        image: msh-application-sppl-shared-services  
+        image: nginx
         ports:
-        - containerPort: 8080  
+        - containerPort: 8080

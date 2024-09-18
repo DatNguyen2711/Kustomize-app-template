@@ -20,6 +20,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx
+            name: msh-kustomize-clusterip
             port:
-              number: 80
+              name: msh-kustomize-port
