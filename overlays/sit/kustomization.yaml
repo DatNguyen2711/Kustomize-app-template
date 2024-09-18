@@ -14,9 +14,7 @@ patches:
 - path: patch/ingress.yaml
 
 images:
-- name: msh-application-sppl-shared-services
-  newName: 851725622524.dkr.ecr.ap-southeast-1.amazonaws.com/msh-application-sppl-shared-services
-  newTag: "v-893"
+- newTag: "latest"
 
 secretGenerator:
 - name: app-secret

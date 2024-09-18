@@ -7,26 +7,19 @@ resources:
 - ../../base
 
 
-
-
-
 patches:
 - path: patch/deployment.yaml
 - path: patch/hpa.yaml
 - path: patch/ingress.yaml
 
 
-
 images:
-- name: nginx
-  newTag: "stable-alpine3.20-perl"
+- name: datnd2711/pharmacy-fe
+  newTag: "prod-0.105"
 
-# labels:
-#   environment: dev
-#   app: msh
 
 secretGenerator:
-- name: app-secret
+- name: my-dockerhub-secret
   literals:
-  - DATABASE_USER=dev-user
-  - DATABASE_PASSWORD=devpassword
+  - username=datnd2711
+  - password=234555axy
