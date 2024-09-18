@@ -18,7 +18,8 @@ patches:
 
 
 images:
-- newTag: "latest"
+- name: nginx
+  newTag: "stable-alpine3.20-perl"
 
 # labels:
 #   environment: dev
