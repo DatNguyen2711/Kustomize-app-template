@@ -18,6 +18,6 @@ spec:
       - name: msh-kustomize
         image: datnd2711/pharmacy-fe
         ports:
-        - containerPort: 80
+        - containerPort: 8080
       imagePullSecrets:
       - name: my-dockerhub-secret
