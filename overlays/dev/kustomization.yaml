@@ -15,7 +15,7 @@ patches:
 
 images:
 - name: datnd2711/pharmacy-fe
-  newTag: "prod-0.108"
+  newTag: "prod-0.109"
 
 
 secretGenerator:
