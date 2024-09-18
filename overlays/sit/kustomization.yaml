@@ -3,27 +3,20 @@ kind: Kustomization
 
 namespace: msh-sit
 
-bases:
+resources:
 - ../../base
 
-# resources:
-# - ../../base/hpa.yaml
-# - ../../base/deployment.yaml
-# - ../../base/ingress.yaml
 
-patchesStrategicMerge:
-- patch/deployment.yaml
-- patch/hpa.yaml
-- patch/ingress.yaml
+
+patches:
+- path: patch/deployment.yaml
+- path: patch/hpa.yaml
+- path: patch/ingress.yaml
 
 images:
 - name: msh-application-sppl-shared-services
   newName: 851725622524.dkr.ecr.ap-southeast-1.amazonaws.com/msh-application-sppl-shared-services
   newTag: "v-893"
-
-commonLabels:
-  environment: sit
-  app: msh-kustomize
 
 secretGenerator:
 - name: app-secret

@@ -1,26 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: msh-sit
-  labels:
-    app: msh
-    environment: sit
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  name: msh
 spec:
-  ingressClassName: nginx
   tls:
   - hosts:
     - "sit-chart-example.local"
-    secretName: sit-chart-example-tls
   rules:
-  - host: "sit-chart-example.local"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx
-            port:
-              number: 80
+  - hosts:
+    - "sit-chart-example.local"

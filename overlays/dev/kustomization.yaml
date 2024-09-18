@@ -3,20 +3,17 @@ kind: Kustomization
 
 namespace: msh-test
 
-bases:
+resources:
 - ../../base
 
 
 
-# resources:
-# - ../../base/hpa.yaml
-# - ../../base/deployment.yaml
-# - ../../base/ingress.yaml
 
-patchesStrategicMerge:
-- patch/deployment.yaml
-- patch/hpa.yaml
-- patch/ingress.yaml
+
+patches:
+- path: patch/deployment.yaml
+- path: patch/hpa.yaml
+- path: patch/ingress.yaml
 
 
 
@@ -26,9 +23,9 @@ images:
   newName: 851725622524.dkr.ecr.ap-southeast-1.amazonaws.com/msh-application-sppl-shared-services
   newTag: "v-891"
 
-commonLabels:
-  environment: dev
-  app: msh
+# labels:
+#   environment: dev
+#   app: msh
 
 secretGenerator:
 - name: app-secret

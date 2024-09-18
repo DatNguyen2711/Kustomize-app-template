@@ -1,26 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: msh-dev
-  labels:
-    app: msh
-    environment: dev
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  name: msh
 spec:
-  ingressClassName: nginx
   tls:
   - hosts:
     - "dev-chart-example.local"
-    secretName: dev-chart-example-tls
   rules:
-  - host: "dev-chart-example.local"
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nginx
-            port:
-              number: 80
+  - hosts:
+    - "dev-chart-example.local"
