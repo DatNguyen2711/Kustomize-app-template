@@ -21,3 +21,16 @@ spec:
         - containerPort: 8080
       imagePullSecrets:
       - name: my-dockerhub-secret
+      volumeMounts:
+      - name: var-volume
+        mountPath: /var/log/nginx
+        readOnly: false
+      - name: var-volume
+        mountPath: /var/cache/nginx
+        readOnly: false
+      - name: var-volume
+        mountPath: /var/run
+        readOnly: false
+      - name: var-volume
+        mountPath: /etc/nginx/conf.d/
+        readOnly: false
