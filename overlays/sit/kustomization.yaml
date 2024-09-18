@@ -6,8 +6,15 @@ namespace: msh-sit
 bases:
 - ../../base
 
+# resources:
+# - ../../base/hpa.yaml
+# - ../../base/deployment.yaml
+# - ../../base/ingress.yaml
+
 patchesStrategicMerge:
 - patch/deployment.yaml
+- patch/hpa.yaml
+- patch/ingress.yaml
 
 images:
 - name: msh-application-sppl-shared-services
