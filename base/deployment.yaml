@@ -34,3 +34,6 @@ spec:
       - name: var-volume
         mountPath: /etc/nginx/conf.d/
         readOnly: false
+      volumes:
+      - name: var-volume
+        emptyDir: {}
